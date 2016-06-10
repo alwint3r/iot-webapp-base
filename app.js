@@ -12,6 +12,7 @@ const config = require('./config');
 
 const app = express();
 const initDatabase = require('./helpers/database');
+const indexRoutes = require('./routes/index');
 
 nunjucks.configure('views', {
     autoescape: true,
@@ -35,9 +36,7 @@ app.use(logger('dev'));
 app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/bower_components'));
 
-app.get('/', (req, res, next) => {
-    res.render('index.html', { name: 'Winter' });
-});
+app.use(indexRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
@@ -60,6 +59,8 @@ app.use((err, req, res, next) => {
     if (req.get('Accept') && req.get('Accept') === 'application/json') {
         return res.status(status).send(JSON.stringify(response));
     }
+
+    res.status(status);
 
     return res.render('templates/error.html', response);
 });
