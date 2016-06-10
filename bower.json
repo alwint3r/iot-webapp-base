@@ -18,6 +18,10 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "jquery": "^3.0.0",
-    "lodash": "^4.13.1"
+    "lodash": "^4.13.1",
+    "morris.js": "morrisjs#^0.5.1",
+    "raphael": "^2.2.0",
+    "metisMenu": "^2.5.2",
+    "font-awesome": "^4.6.3"
   }
 }
