@@ -32,6 +32,7 @@ app.use(session({
     secret: config.session.secret,
     maxAge: new Date(Date.now() + 3600000)
 }));
+app.use(flash());
 app.use(logger('dev'));
 app.use(express.static(__dirname + '/assets'));
 app.use(express.static(__dirname + '/bower_components'));

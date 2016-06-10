@@ -2,6 +2,52 @@
 
 {% block content %}
 <div class="row">
+    <div class="col-xs-12">
+        <form method="POST" action="/configuration" role="form" class="form-vertical">
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="form-group">
+                    <label for="host">MQTT Host</label>
+                    <input type="text" name="host" class="form-control" placeholder="MQTT Host" value="{{ config.host }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="host">MQTT Port (websocket)</label>
+                    <input type="text" name="port" class="form-control" placeholder="MQTT Port" value="{{ config.port }}" required>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="form-group">
+                    <label for="host">MQTT Username</label>
+                    <input type="text" name="username" class="form-control" placeholder="MQTT Username" value="{{ config.username }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="host">MQTT Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="MQTT Password" required>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="form-group">
+                    <label for="host">MQTT Control Topic</label>
+                    <input type="text" name="control_topic" class="form-control" placeholder="MQTT Control Topic" value="{{ config.control_topic }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="host">MQTT Data Topic</label>
+                    <input type="text" name="data_topic" class="form-control" placeholder="MQTT Data Topic" value="{{ config.data_topic }}" required>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <input type="submit" class="btn btn-md btn-block btn-info" value="Save Configuration">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
 <!-- PLACE YOUR CODE HERE -->
 </div>
 {% endblock %}
