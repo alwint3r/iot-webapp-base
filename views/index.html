@@ -2,6 +2,50 @@
 
 {% block content %}
 <div class="row">
+    <div class="col-xs-3 col-md-4 col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Room Pressure</div>
+            <div class="panel-body">
+                <div id="pressure-gauge"></div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel panel-heading">LED Indicator</div>
+            <div class="panel panel-body">
+                <button type="button" class="btn btn-lg btn-circle btn-default" id="led-indicator" style="cursor: default">
+
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-9 col-md-4 col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Temperature</div>
+            <div class="panel-body">
+                 <div id="temp-line-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-4 col-lg-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">Device Control</div>
+            <div class="panel-body">
+                <button class="btn btn btn-default btn-block" id="switch-control">
+                    Switch Control
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-bottom: 60px">
+    <div class="col-lg-12">
+        <h1 class="page-header"> Configuration </h1>
+    </div>
+
     <form method="POST" action="/configuration" role="form" class="form-vertical">
         <div class="col-xs-12 col-md-6 col-lg-4">
             <div class="form-group">
@@ -23,7 +67,7 @@
 
             <div class="form-group">
                 <label for="host">MQTT Password</label>
-                <input type="password" name="password" class="form-control" placeholder="MQTT Password" required>
+                <input type="password" name="password" class="form-control" placeholder="MQTT Password" value="{{ config.password }}" required>
             </div>
         </div>
 
@@ -43,10 +87,6 @@
             <input type="submit" class="btn btn-md btn-block btn-info" value="Save Configuration">
         </div>
     </form>
-</div>
-
-<div class="row" style="margin-top: 60px">
-    <!-- PLACE YOUR CODE HERE -->
 </div>
 {% endblock %}
 
