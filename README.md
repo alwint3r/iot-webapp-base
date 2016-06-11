@@ -12,6 +12,15 @@ This repository is used in Building IoT Backend & Web App with Node.js workshop 
 4. Then, run `bower install` to install all dependencies for your front-end web.
 5. Run `npm run start` or `npm run start-nodemon` if you have nodemon installed.
 
+## Connectivity
+
+```
+username: iotdevday-alpha
+password: makanpadang
+data topic: iotdevday-alpha/smartiotdemo/data
+control topic: iotdevday-alpha/smartiotdemo/control
+```
+
 
 ### License
 
